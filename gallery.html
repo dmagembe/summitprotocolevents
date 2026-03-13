@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Summit Protocol Uganda</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav nav--transparent" id="mainNav">
+  <a href="index.html" class="nav__brand"><span class="nav__name">Summit Protocol</span><span class="nav__tag">Uganda · Elite Event Management</span></a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="nav__cta">Book Now</a>
+  <!-- Hamburger button -->
+<button onclick="this.classList.toggle('open'); document.getElementById('mobileMenu').classList.toggle('open')" class="hamburger" id="hamburgerBtn">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="booking.html" class="mobile-menu__cta">Book Now</a>
+</div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero__bg" style="background-image:url('img/SM3.webp')"></div>
+  <div class="page-hero__overlay"></div>
+  <div class="page-hero__content">
+    <div class="page-hero__label"><span class="label">Our Portfolio</span></div>
+    <h1 class="h1">Events We Have<br><em>Transformed</em></h1>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="gallery-intro fade">
+  <div class="gallery-intro1">
+    <div style="margin-bottom:10px"><span class="label">Our Work</span></div>
+    <h2 class="h2">A Visual Record<br>of <em>Excellence</em></h2>
+  </div>
+  <div class="gallery-intro1">
+    <p class="gallery-intro__text">Browse highlights from over events delivered across Uganda.</p>
+  </div>
+  
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All Events</button>
+  <button class="filter-btn" data-filter="corporate">Corporate</button>
+  <button class="filter-btn" data-filter="state">State &amp; Diplomatic</button>
+  <button class="filter-btn" data-filter="gala">Galas &amp; Awards</button>
+  <button class="filter-btn" data-filter="wedding">Weddings</button>
+  <button class="filter-btn" data-filter="team">Team</button>
+</div>
+
+<!-- FEATURED -->
+<div class="gal-featured">
+  <div class="feat-item" data-category="team">
+    <img src="img/SM3.webp" alt="Summit Protocol team in formal black uniforms">
+    <div class="feat-overlay"></div>
+    <div class="feat-cap"><div class="feat-cap__cat">Team</div><div class="feat-cap__title">The Summit Protocol Team</div></div>
+  </div>
+  <div class="feat-stack">
+    <div class="feat-item" data-category="state">
+      <img src="img/SM6.webp" alt="Summit Protocol state function team">
+      <div class="feat-overlay"></div>
+      <div class="feat-cap"><div class="feat-cap__cat">State &amp; Diplomatic</div><div class="feat-cap__title">State Function Formation</div></div>
+    </div>
+    <div class="feat-item" data-category="corporate">
+      <img src="img/SM9.webp" alt="Summit Protocol corporate event">
+      <div class="feat-overlay"></div>
+      <div class="feat-cap"><div class="feat-cap__cat">Corporate</div><div class="feat-cap__title">Corporate Event Briefing</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN GRID -->
+<div class="gal-grid-wrap">
+  <div class="gal-grid" id="galGrid">
+
+    <div class="gal-item tall" data-category="team">
+      <img src="img/SM1.webp" alt="Summit Protocol services team group photo">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Team</div><div class="gal-title">Summit Protocol Full Team</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/SM2.webp" alt="Team in black formal attire outdoors">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Corporate Gala Evening</div></div>
+    </div>
+
+    <div class="gal-item wide" data-category="state">
+      <img src="img/SM5.webp" alt="Summit Protocol national event team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">State &amp; Diplomatic</div><div class="gal-title">Protocol Services — National Event</div></div>
+    </div>
+
+    <div class="gal-item" data-category="gala">
+      <img src="img/sm20.webp" alt="Summit Protocol awards evening">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Gala &amp; Awards</div><div class="gal-title">Awards Evening Preparation</div></div>
+    </div>
+
+    <div class="gal-item" data-category="wedding">
+      <img src="img/SM7.webp" alt="Summit Protocol wedding ushering team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Wedding</div><div class="gal-title">Formal Wedding Ushering</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/SM8.webp" alt="Summit Protocol Stanbic dinner team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Stanbic Annual Dinner</div></div>
+    </div>
+
+    <div class="gal-item" data-category="state">
+      <img src="img/SM10.webp" alt="Summit Protocol ministerial function">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">State &amp; Diplomatic</div><div class="gal-title">Ministerial Function</div></div>
+    </div>
+
+    <div class="gal-item tall" data-category="team">
+      <img src="img/SM11.webp" alt="Summit Protocol full squad branded">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Team</div><div class="gal-title">Summit Protocol — Full Squad</div></div>
+    </div>
+
+    <div class="gal-item wide" data-category="gala">
+      <img src="img/SM12.webp" alt="Summit Protocol Pearl of Africa Awards">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Gala &amp; Awards</div><div class="gal-title">Pearl of Africa Awards</div></div>
+    </div>
+
+    <div class="gal-item" data-category="wedding">
+      <img src="img/SM2.webp" alt="Summit Protocol wedding ushering outdoor">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Wedding</div><div class="gal-title">Garden Wedding — Kampala</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/sm40.webp" alt="Summit Protocol executive conference">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Executive Conference Support</div></div>
+    </div>
+
+    <div class="gal-item" data-category="state">
+      <img src="img/SM6.webp" alt="Summit Protocol parliamentary reception">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">State &amp; Diplomatic</div><div class="gal-title">Parliamentary Reception</div></div>
+    </div>
+
+    <div class="gal-item" data-category="gala">
+      <img src="img/SM9.webp" alt="Summit Protocol Serena Hotel gala">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Gala &amp; Awards</div><div class="gal-title">Gala Dinner — Serena Hotel</div></div>
+    </div>
+
+    <div class="gal-item" data-category="team">
+      <img src="img/SM3.webp" alt="Summit Protocol black formal uniforms">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Team</div><div class="gal-title">Team A — Black Formal</div></div>
+    </div>
+
+    <div class="gal-item" data-category="wedding">
+      <img src="img/SM8.webp" alt="Summit Protocol church wedding ushers">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Wedding</div><div class="gal-title">Church Wedding Ushering</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/sm29.webp" alt="Summit Protocol AGM team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Annual General Meeting</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/sm25.webp" alt="Summit Protocol AGM team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Annual General Meeting</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/sm21.webp" alt="Summit Protocol AGM team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Annual General Meeting</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/sm15.webp" alt="Summit Protocol AGM team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Annual General Meeting</div></div>
+    </div>
+
+    <div class="gal-item" data-category="corporate">
+      <img src="img/_DSC4259.webp" alt="Summit Protocol AGM team">
+      <div class="gal-overlay"></div>
+      <div class="gal-meta"><div class="gal-cat">Corporate</div><div class="gal-title">Annual General Meeting</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose">✕</button>
+    <div class="lb-img" id="lbImg"></div>
+    <div class="lb-cap">
+      <div><div class="lb-cat" id="lbCat"></div><div class="lb-title" id="lbTitle"></div></div>
+    </div>
+    <div class="lb-nav lb-nav--prev"><button class="lb-btn" id="lbPrev">‹</button></div>
+    <div class="lb-nav lb-nav--next"><button class="lb-btn" id="lbNext">›</button></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div><div class="footer__name">Summit Protocol</div><div class="footer__tag">Uganda · Elite Event Management</div><p class="footer__about">A premier protocol and executive ushering team. Excellence · Professionalism · Discretion.</p></div>
+    <div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html">Executive Ushering</a></li><li><a href="services.html">Protocol Management</a></li><li><a href="services.html">VIP Guest Management</a></li><li><a href="services.html">Gala &amp; State Dinners</a></li></ul></div>
+    <div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer__contact"><div class="footer__col-title">Contact</div><div class="fc-item"><span class="fc-label">Phone</span><span class="fc-val">+256 783 054 150</span></div><div class="fc-item"><span class="fc-label">Email</span><span class="fc-val">summitprotocolug@gmail.com</span></div><div class="fc-item"><span class="fc-label">Location</span><span class="fc-val">Kampala, Uganda</span></div></div>
+  </div>
+  <div class="footer__bottom"><span class="footer__copy">© 2025 Summit Protocol Uganda. All rights reserved.</span><div class="footer__socials"><a class="footer__soc" href="https://www.instagram.com/summitprotocolug" target="_blank" rel="noopener" aria-label="IG"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a class="footer__soc" href="https://www.facebook.com/summitprotocolug" target="_blank" rel="noopener" aria-label="FB"><svg viewBox="0 0 24 24" fill="none"><path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="footer__soc" href="https://www.linkedin.com/company/summit-protocol-uganda" target="_blank" rel="noopener" aria-label="LI"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 11v5M8 8v.5M12 16v-3a2 2 0 0 1 4 0v3M12 11v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a><a class="footer__soc" href="https://wa.me/256783054150" target="_blank" rel="noopener" aria-label="WA"><svg viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5A12 12 0 0 0 3.5 20.5L2 22l1.5-5.5A12 12 0 1 0 20.5 3.5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 9c0 5 6 7 6 7l1-2-2.5-1.5L13 13l-2-2 .5-.5L10 8l-1 1z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a></div></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script>
+const filterBtns = document.querySelectorAll('.filter-btn');
+const items = document.querySelectorAll('.gal-item[data-category]');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    items.forEach(item => item.classList.toggle('hidden', f !== 'all' && item.dataset.category !== f));
+  });
+});
+
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbTitle = document.getElementById('lbTitle');
+const lbCat = document.getElementById('lbCat');
+let ci = 0, vi = [];
+function getVis(){ return [...items].filter(i => !i.classList.contains('hidden')); }
+function show(i){
+  const it = vi[i];
+  lbImg.innerHTML = `<img src="${it.querySelector('img').src}" alt="${it.querySelector('img').alt}">`;
+  lbTitle.textContent = it.querySelector('.gal-title').textContent;
+  lbCat.textContent = it.querySelector('.gal-cat').textContent;
+}
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    vi = getVis(); ci = vi.indexOf(item);
+    if(ci >= 0){ show(ci); lb.classList.add('open'); }
+  });
+});
+
+// Featured items also open lightbox (all gal items + feat items)
+const featItems = document.querySelectorAll('.feat-item');
+featItems.forEach(feat => {
+  feat.addEventListener('click', () => {
+    const img = feat.querySelector('img');
+    const cat = feat.querySelector('.feat-cap__cat');
+    const title = feat.querySelector('.feat-cap__title');
+    lbImg.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+    lbTitle.textContent = title ? title.textContent : '';
+    lbCat.textContent = cat ? cat.textContent : '';
+    vi = []; // no prev/next for featured
+    lb.classList.add('open');
+  });
+});
+document.getElementById('lbClose').addEventListener('click', () => lb.classList.remove('open'));
+document.getElementById('lbPrev').addEventListener('click', () => { ci = (ci-1+vi.length)%vi.length; show(ci); });
+document.getElementById('lbNext').addEventListener('click', () => { ci = (ci+1)%vi.length; show(ci); });
+lb.addEventListener('click', e => { if(e.target === lb) lb.classList.remove('open'); });
+document.addEventListener('keydown', e => {
+  if(!lb.classList.contains('open')) return;
+  if(e.key==='Escape') lb.classList.remove('open');
+  if(e.key==='ArrowLeft'){ ci=(ci-1+vi.length)%vi.length; show(ci); }
+  if(e.key==='ArrowRight'){ ci=(ci+1)%vi.length; show(ci); }
+});
+</script>
+
+<script src="main.js"></script>
+</body>
+</html>

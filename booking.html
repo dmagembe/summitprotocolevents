@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Summit Protocol | Pricing Calculator &amp; Enquiry</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav nav--scrolled" id="mainNav">
+  <a href="index.html" class="nav__brand"><span class="nav__name">Summit Protocol</span><span class="nav__tag">Uganda · Elite Event Management</span></a>
+  <ul class="nav__links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="booking.html" class="nav__cta active">Book Now</a>
+  <!-- Hamburger button -->
+<button onclick="this.classList.toggle('open'); document.getElementById('mobileMenu').classList.toggle('open')" class="hamburger" id="hamburgerBtn">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="booking.html" class="mobile-menu__cta">Book Now</a>
+</div>
+</nav>
+
+<!-- BOOKING HERO -->
+<section class="booking-hero">
+  <div class="fade">
+    <div style="margin-bottom:18px"><span class="label" style="color:var(--gold)">Book Summit Protocol</span></div>
+    <h1 class="h2 booking-hero__title">Get Your <em>Instant Quote</em><br>Then Book Your Team</h1>
+    <p class="booking-hero__sub">Use our pricing calculator to instantly see the recommended package for your event. Then complete the booking form and we'll confirm within 24 hours.</p>
+    <div class="booking-hero__trust">
+      <div class="bht-item">
+        <svg class="bht-icon" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.6 6.1 6.4.9-4.6 4.5 1.1 6.4L11 17l-5.5 2.9 1.1-6.4L2 9l6.4-.9L11 2z" stroke="currentColor" stroke-width="1.3"/></svg>
+        <div class="bht-text"><strong>Instant Package Recommendation</strong>Based on your guest count</div>
+      </div>
+      <div class="bht-item">
+        <svg class="bht-icon" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 20.5C5.75 20.5 1.5 16.25 1.5 11S5.75 1.5 11 1.5 20.5 5.75 20.5 11 16.25 20.5 11 20.5z" stroke="currentColor" stroke-width="1.3"/><path d="M11 7v4l3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <div class="bht-text"><strong>24-Hour Confirmation</strong>We respond to every enquiry</div>
+      </div>
+      <div class="bht-item">
+        <svg class="bht-icon" width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="bht-text"><strong>100% Client Satisfaction</strong>On all 500+ events served</div>
+      </div>
+    </div>
+  </div>
+  <div class="booking-hero__mini-stats fade fade-d1">
+    <div class="bms-item"><div class="bms-num">500+</div><div class="bms-lbl">Events Delivered</div></div>
+    <div class="bms-item"><div class="bms-num">50</div><div class="bms-lbl">Trained Officers</div></div>
+    <div class="bms-item"><div class="bms-num">8+</div><div class="bms-lbl">Years Excellence</div></div>
+    <div class="bms-item"><div class="bms-num">100%</div><div class="bms-lbl">Satisfaction Rate</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     PRICING CALCULATOR
+══════════════════════════════════ -->
+<section class="pricing-calc">
+  <div class="pricing-calc__hdr fade">
+    <div style="margin-bottom:14px;display:flex;justify-content:center"><span class="label">Pricing Calculator</span></div>
+    <h2 class="h2">Get Your <em>Instant Quote</em></h2>
+    <p>Enter your expected number of guests and event type to see your recommended package and estimated price.</p>
+  </div>
+
+  <div class="calc-card fade fade-d1">
+    <!-- INPUTS -->
+    <div class="calc-inputs">
+      <div class="calc-group">
+        <label class="calc-label">Number of Guests</label>
+        <div class="calc-input-wrap">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="6" r="3.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 16c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.2"/></svg>
+          <input type="number" class="calc-num-input" id="guestCount" value="100" min="10" max="1500" step="10">
+        </div>
+        <input type="range" class="calc-range" id="guestRange" min="10" max="1500" value="100" step="10">
+        <div class="calc-range-labels"><span>10</span><span>500</span><span>1,000</span><span>1,500</span></div>
+      </div>
+      <div class="calc-group">
+        <label class="calc-label">Event Type</label>
+        <select class="calc-select" id="eventType">
+          <option value="1.0">Corporate Gala / Dinner</option>
+          <option value="1.2">State / Government Function</option>
+          <option value="1.3">Diplomatic Reception</option>
+          <option value="1.1">Award Ceremony</option>
+          <option value="0.9">Wedding</option>
+          <option value="0.85">AGM / Conference</option>
+          <option value="1.0">Other</option>
+        </select>
+        <label class="calc-label" style="margin-top:18px">Number of Days</label>
+        <select class="calc-select" id="eventDays">
+          <option value="1">1 Day</option>
+          <option value="1.6">2 Days</option>
+          <option value="2.1">3 Days</option>
+          <option value="2.5">4+ Days</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- RESULT CARDS -->
+    <div class="calc-results">
+      <div class="calc-result-card">
+        <div class="calc-rc-label">Recommended Package</div>
+        <svg class="calc-rc-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M4 14h24M11 8V6M21 8V6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <div class="calc-rc-value" id="rcPackage">Starter</div>
+        <div class="calc-rc-sub" id="rcGuests">0–100 guests</div>
+      </div>
+      <div class="calc-result-card">
+        <div class="calc-rc-label">Ushers Required</div>
+        <svg class="calc-rc-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="12" cy="10" r="4" stroke="currentColor" stroke-width="1.3"/><path d="M3 28c0-4.97 4.03-9 9-9m7-5 2.5 2.5L28 10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <div class="calc-rc-value" id="rcUshers">5</div>
+        <div class="calc-rc-sub">Trained officers</div>
+      </div>
+      <div class="calc-result-card calc-result-card--gold">
+        <div class="calc-rc-label">Estimated Price</div>
+        <svg class="calc-rc-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="7" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.3"/><circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.3"/><path d="M16 12v8M12 16h8" stroke="currentColor" stroke-width="1.2"/></svg>
+        <div class="calc-rc-value" id="rcPrice">UGX 1,000,000</div>
+        <div class="calc-rc-sub">Indicative · Excl. extras</div>
+      </div>
+    </div>
+
+    <!-- PACKAGES TABLE -->
+    <div style="margin-bottom:24px">
+      <div style="font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted);font-weight:600;margin-bottom:16px">All Packages</div>
+      <table class="packages-table" id="pkgTable">
+        <thead>
+          <tr>
+            <th>Package</th>
+            <th>Guests</th>
+            <th>Ushers</th>
+            <th>Starting Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-pkg="Starter" data-min="0" data-max="100">
+            <td><span class="pkg-name">Starter</span></td>
+            <td>0 – 100</td>
+            <td>5 ushers</td>
+            <td>UGX 1,000,000</td>
+            <td></td>
+          </tr>
+          <tr data-pkg="Essential" data-min="101" data-max="200">
+            <td><span class="pkg-name">Essential</span></td>
+            <td>101 – 200</td>
+            <td>10 ushers</td>
+            <td>UGX 2,000,000</td>
+            <td></td>
+          </tr>
+          <tr data-pkg="Standard" data-min="201" data-max="400">
+            <td><span class="pkg-name">Standard</span></td>
+            <td>201 – 400</td>
+            <td>15 ushers</td>
+            <td>UGX 3,500,000</td>
+            <td></td>
+          </tr>
+          <tr data-pkg="Premium" data-min="401" data-max="700">
+            <td><span class="pkg-name">Premium</span></td>
+            <td>401 – 700</td>
+            <td>20 ushers</td>
+            <td>UGX 5,000,000</td>
+            <td><span class="pkg-badge pkg-badge--gold">Popular</span></td>
+          </tr>
+          <tr data-pkg="Executive" data-min="701" data-max="1000">
+            <td><span class="pkg-name">Executive</span></td>
+            <td>701 – 1,000</td>
+            <td>30 ushers</td>
+            <td>UGX 7,500,000</td>
+            <td></td>
+          </tr>
+          <tr data-pkg="Grand" data-min="1001" data-max="1500">
+            <td><span class="pkg-name">Grand</span></td>
+            <td>1,001 – 1,500</td>
+            <td>40 ushers</td>
+            <td>UGX 10,000,000</td>
+            <td><span class="pkg-badge">Flagship</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CTA -->
+    <div class="calc-cta-row">
+      <div class="calc-cta-note">
+        <strong id="ctaNoteTitle">Ready to book the Starter package?</strong>
+        Fill in the form below and we'll confirm your booking and final pricing within 24 hours.
+      </div>
+      <a href="#booking-form" class="btn btn--navy" id="calcBookBtn">
+        Book This Package
+        <svg viewBox="0 0 16 16" fill="none" width="15" height="15"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     BOOKING FORM
+══════════════════════════════════ -->
+<section class="booking-form-section" id="booking-form">
+  <div class="booking-form-info fade">
+    <div style="margin-bottom:14px"><span class="label">Complete Your Booking</span></div>
+    <h2 class="bfi-title">Book Summit Protocol<br>for Your <em>Event</em></h2>
+    <p class="bfi-sub">Complete the form and your enquiry will be sent directly to the Summit Protocol team. We'll confirm availability, finalise your package, and send a formal quote within 24 hours.</p>
+    <div class="bfi-steps">
+      <div class="bfi-step">
+        <div class="bfi-step-num">1</div>
+        <div><div class="bfi-step-title">Submit Your Enquiry</div><p class="bfi-step-body">Fill in your event details and selected package below.</p></div>
+      </div>
+      <div class="bfi-step">
+        <div class="bfi-step-num">2</div>
+        <div><div class="bfi-step-title">We Confirm Within 24hrs</div><p class="bfi-step-body">Our team reviews your booking and confirms availability, sending a formal quote.</p></div>
+      </div>
+      <div class="bfi-step">
+        <div class="bfi-step-num">3</div>
+        <div><div class="bfi-step-title">Team Briefing</div><p class="bfi-step-body">We conduct a full briefing and venue walk-through before your event day.</p></div>
+      </div>
+      <div class="bfi-step">
+        <div class="bfi-step-num">4</div>
+        <div><div class="bfi-step-title">Flawless Delivery</div><p class="bfi-step-body">Your Summit Protocol team arrives early, uniformed, briefed, and ready.</p></div>
+      </div>
+    </div>
+    <div style="margin-top:32px;padding:20px;background:var(--off-white);border-left:3px solid var(--gold)">
+      <div style="font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px">Direct Contact</div>
+      <div style="font-size:.85rem;color:var(--navy);font-weight:500">Calvin Ahumuza Kavumba</div>
+      <div style="font-size:.78rem;color:var(--text-mid);margin-top:4px">+256 783 054 150 · +256 704 169 519</div>
+      <div style="font-size:.78rem;color:var(--text-mid)">summitprotocolug@gmail.com</div>
+    </div>
+  </div>
+
+  <div class="booking-form-wrap fade fade-d1">
+    <!-- Selected package banner (populated by JS) -->
+    <div class="selected-pkg-banner" id="selectedPkgBanner">
+      <div>
+        <div class="spb-label">Selected Package</div>
+        <div class="spb-value" id="bannerPkg">Starter Package</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:2px" id="bannerUshers">5 ushers · 0–100 guests</div>
+      </div>
+      <div style="text-align:right">
+        <div class="spb-price-lbl">Estimated Price</div>
+        <div class="spb-price" id="bannerPrice">UGX 1,000,000</div>
+        <div style="font-size:.62rem;color:rgba(255,255,255,.3);margin-top:2px">Indicative — final on confirmation</div>
+      </div>
+    </div>
+
+    <form class="booking-form" id="bookingForm">
+      <!-- Section 1: Event Details -->
+      <div class="bf-section-title">Event Details</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Event Name / Title</label>
+          <input type="text" class="form-input" name="event_name" placeholder="e.g. Annual Gala Dinner 2025" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Event Type *</label>
+          <select class="form-input" name="event_type" required>
+            <option value="" disabled selected>Select event type</option>
+            <option>State / Government Function</option>
+            <option>Diplomatic Reception</option>
+            <option>Corporate Gala / Dinner</option>
+            <option>AGM / Conference</option>
+            <option>Award Ceremony</option>
+            <option>Wedding</option>
+            <option>Parliamentary Event</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Event Date *</label>
+          <input type="date" class="form-input" name="event_date" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Number of Days</label>
+          <select class="form-input" name="event_days">
+            <option>1 Day</option>
+            <option>2 Days</option>
+            <option>3 Days</option>
+            <option>4+ Days</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Expected Guests *</label>
+          <input type="number" class="form-input" name="guest_count" id="formGuestCount" placeholder="e.g. 200" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Venue / Location *</label>
+          <input type="text" class="form-input" name="venue" placeholder="Venue name &amp; city" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Selected Package</label>
+        <input type="text" class="form-input" name="selected_package" id="formPackage" readonly style="background:var(--light-grey);cursor:not-allowed" value="Starter Package — 5 ushers (UGX 1,000,000 est.)">
+      </div>
+
+      <!-- Section 2: Contact Details -->
+      <div class="bf-section-title" style="margin-top:12px">Your Details</div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" class="form-input" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Organisation / Company</label>
+          <input type="text" class="form-input" name="organisation" placeholder="Organisation name">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone / WhatsApp *</label>
+          <input type="tel" class="form-input" name="phone" placeholder="+256 700 000 000" required>
+        </div>
+      </div>
+
+      <!-- Section 3: Extras -->
+      <div class="bf-section-title" style="margin-top:12px">Additional Requirements</div>
+
+      <div class="form-group">
+        <label class="form-label">Dress Code / Uniform Preference</label>
+        <select class="form-input" name="dress_code">
+          <option value="" disabled selected>Select preference</option>
+          <option>Black Formal (default)</option>
+          <option>White Shirt &amp; Black Trouser</option>
+          <option>Custom — match our event colours</option>
+          <option>No preference — advise us</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Additional Notes or Special Requirements</label>
+        <textarea class="form-input" name="notes" rows="4" placeholder="VIP guests, security liaison requirements, accessibility needs, special instructions…"></textarea>
+      </div>
+
+      <!-- Confirm box -->
+      <div class="booking-confirm-box">
+        <p>Your booking enquiry will be sent directly to <strong>summitprotocolug@gmail.com</strong>. The Summit Protocol team will review your request and respond within <strong>24 hours</strong> with a formal confirmation and final quote. No payment is required at this stage.</p>
+      </div>
+
+      <button type="submit" class="bf-submit">
+        Send Booking Enquiry →
+      </button>
+
+      <div class="bf-success" id="bfSuccess">
+        <p><strong>Enquiry Received — Thank You!</strong>
+        Your booking enquiry has been sent to the Summit Protocol team at summitprotocolug@gmail.com. We will confirm your booking and send a formal quote within 24 hours.<br><br>
+        For urgent enquiries, call or WhatsApp: <strong>+256 783 054 150</strong></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div style="background:var(--off-white);padding:48px var(--px);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1200px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4l2.8 7 7.2.8-5.2 5 1.5 7.2L16 20.5l-6.3 3.5 1.5-7.2L6 11.8l7.2-.8L16 4z" stroke="var(--gold)" stroke-width="1.3"/></svg>
+      <div><div style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)">100% Satisfaction</div><div style="font-size:.74rem;color:var(--text-muted);margin-top:2px">On all 500+ events</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="var(--gold)" stroke-width="1.3"/><path d="M16 10v6l4 4" stroke="var(--gold)" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <div><div style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)">24hr Response</div><div style="font-size:.74rem;color:var(--text-muted);margin-top:2px">To every enquiry</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="12" cy="10" r="5" stroke="var(--gold)" stroke-width="1.3"/><path d="M4 28c0-4.4 3.6-8 8-8m10-6 2.5 2.5 4.5-4.5" stroke="var(--gold)" stroke-width="1.3" stroke-linecap="round"/></svg>
+      <div><div style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)">50 Trained Officers</div><div style="font-size:.74rem;color:var(--text-muted);margin-top:2px">Available to deploy</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4C10.48 4 6 8.48 6 14c0 8 10 16 10 16s10-8 10-16c0-5.52-4.48-10-10-10zm0 13a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" stroke="var(--gold)" stroke-width="1.3"/></svg>
+      <div><div style="font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)">Pan-East Africa</div><div style="font-size:.74rem;color:var(--text-muted);margin-top:2px">UG · KE · TZ · RW</div></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div><div class="footer__name">Summit Protocol</div><div class="footer__tag">Uganda · Elite Event Management</div><p class="footer__about">A premier protocol and executive ushering team. Excellence · Professionalism · Discretion.</p></div>
+    <div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html">Executive Ushering</a></li><li><a href="services.html">Protocol Management</a></li><li><a href="services.html">VIP Guest Management</a></li><li><a href="services.html">Gala &amp; State Dinners</a></li></ul></div>
+    <div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer__contact"><div class="footer__col-title">Contact</div><div class="fc-item"><span class="fc-label">Team Lead</span><span class="fc-val">Calvin Ahumuza Kavumba</span></div><div class="fc-item"><span class="fc-label">Phone / WhatsApp</span><span class="fc-val">+256 783 054 150<br>+256 704 169 519</span></div><div class="fc-item"><span class="fc-label">Email</span><span class="fc-val">summitprotocolug@gmail.com</span></div></div>
+  </div>
+  <div class="footer__bottom"><span class="footer__copy">© 2025 Summit Protocol Uganda. All rights reserved.</span><div class="footer__socials"><a class="footer__soc" href="https://www.instagram.com/summitprotocolug" target="_blank" rel="noopener" aria-label="IG"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a><a class="footer__soc" href="https://www.facebook.com/summitprotocolug" target="_blank" rel="noopener" aria-label="FB"><svg viewBox="0 0 24 24" fill="none"><path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="footer__soc" href="https://www.linkedin.com/company/summit-protocol-uganda" target="_blank" rel="noopener" aria-label="LI"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 11v5M8 8v.5M12 16v-3a2 2 0 0 1 4 0v3M12 11v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a><a class="footer__soc" href="https://wa.me/256783054150" target="_blank" rel="noopener" aria-label="WA"><svg viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5A12 12 0 0 0 3.5 20.5L2 22l1.5-5.5A12 12 0 1 0 20.5 3.5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 9c0 5 6 7 6 7l1-2-2.5-1.5L13 13l-2-2 .5-.5L10 8l-1 1z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a></div></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+<script>
+/* ── PACKAGE DATA ─────────────────────────────── */
+const packages = [
+  { name:'Starter',   min:0,    max:100,  ushers:5,  base:1000000  },
+  { name:'Essential', min:101,  max:200,  ushers:10, base:2000000  },
+  { name:'Standard',  min:201,  max:400,  ushers:15, base:3500000  },
+  { name:'Premium',   min:401,  max:700,  ushers:20, base:5000000  },
+  { name:'Executive', min:701,  max:1000, ushers:30, base:7500000  },
+  { name:'Grand',     min:1001, max:1500, ushers:40, base:10000000 },
+];
+
+function getPkg(guests){
+  return packages.find(p => guests >= p.min && guests <= p.max) || packages[packages.length-1];
+}
+
+function fmt(n){ return 'UGX ' + n.toLocaleString('en-UG'); }
+
+function calcPrice(pkg, typeMul, daysMul){
+  return Math.round(pkg.base * typeMul * daysMul / 100000) * 100000;
+}
+
+/* ── UPDATE UI ────────────────────────────────── */
+function update(){
+  const guests   = parseInt(document.getElementById('guestCount').value) || 100;
+  const typeMul  = parseFloat(document.getElementById('eventType').value) || 1;
+  const daysMul  = parseFloat(document.getElementById('eventDays').value) || 1;
+
+  const pkg   = getPkg(guests);
+  const price = calcPrice(pkg, typeMul, daysMul);
+
+  // result cards
+  document.getElementById('rcPackage').textContent = pkg.name;
+  document.getElementById('rcGuests').textContent  = `${pkg.min.toLocaleString()}–${pkg.max.toLocaleString()} guests`;
+  document.getElementById('rcUshers').textContent  = pkg.ushers;
+  document.getElementById('rcPrice').textContent   = fmt(price);
+
+  // table highlight
+  document.querySelectorAll('#pkgTable tbody tr').forEach(row => {
+    row.classList.toggle('pkg-active', row.dataset.pkg === pkg.name);
+  });
+
+  // booking banner
+  document.getElementById('bannerPkg').textContent     = pkg.name + ' Package';
+  document.getElementById('bannerUshers').textContent  = `${pkg.ushers} ushers · ${pkg.min.toLocaleString()}–${pkg.max.toLocaleString()} guests`;
+  document.getElementById('bannerPrice').textContent   = fmt(price);
+
+  // form fields
+  document.getElementById('formPackage').value = `${pkg.name} Package — ${pkg.ushers} ushers (${fmt(price)} est.)`;
+  if(!document.getElementById('formGuestCount').value)
+    document.getElementById('formGuestCount').placeholder = guests;
+
+  // CTA note
+  document.getElementById('ctaNoteTitle').textContent = `Ready to book the ${pkg.name} package?`;
+}
+
+/* ── SYNC RANGE ↔ NUMBER ─────────────────────── */
+const guestInput = document.getElementById('guestCount');
+const guestRange = document.getElementById('guestRange');
+
+guestInput.addEventListener('input', () => {
+  let v = Math.min(1500, Math.max(10, parseInt(guestInput.value)||10));
+  guestRange.value = v;
+  update();
+});
+guestRange.addEventListener('input', () => {
+  guestInput.value = guestRange.value;
+  update();
+});
+document.getElementById('eventType').addEventListener('change', update);
+document.getElementById('eventDays').addEventListener('change', update);
+
+// "Book This Package" scrolls to form
+document.getElementById('calcBookBtn').addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('booking-form').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+// init
+update();
+
+/* ── FORM SUBMISSION ─────────────────────────── */
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(this);
+  const fields = {};
+  for(let [k,v] of data) fields[k] = v;
+
+  // Build mailto body
+  const body = [
+    '=== SUMMIT PROTOCOL BOOKING ENQUIRY ===',
+    '',
+    '--- EVENT DETAILS ---',
+    `Event Name:    ${fields.event_name || '—'}`,
+    `Event Type:    ${fields.event_type || '—'}`,
+    `Event Date:    ${fields.event_date || '—'}`,
+    `Duration:      ${fields.event_days || '—'}`,
+    `Guest Count:   ${fields.guest_count || '—'}`,
+    `Venue:         ${fields.venue || '—'}`,
+    `Package:       ${fields.selected_package || '—'}`,
+    '',
+    '--- CLIENT DETAILS ---',
+    `Name:          ${fields.name || '—'}`,
+    `Organisation:  ${fields.organisation || '—'}`,
+    `Email:         ${fields.email || '—'}`,
+    `Phone:         ${fields.phone || '—'}`,
+    '',
+    '--- REQUIREMENTS ---',
+    `Dress Code:    ${fields.dress_code || '—'}`,
+    `Notes:         ${fields.notes || '—'}`,
+    '',
+    '=== SUMMIT PROTOCOL BOOKING ENQUIRY ===\n\n' +
+    Object.entries(fields).map(([k,v])=>`${k}: ${v}`).join('\n')
+  ].join('\n');
+
+  const subject = encodeURIComponent('Summit Protocol Booking Enquiry');
+  const bodyEnc = encodeURIComponent(body);
+  window.location.href = `mailto:summitprotocolug@gmail.com?subject=${subject}&body=${bodyEnc}`;
+
+  document.getElementById('bfSuccess').style.display = 'block';
+  this.reset();
+});
+</script>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div><div class="footer__name">Summit Protocol</div><div class="footer__tag">Uganda · Elite Event Management</div><p class="footer__about">A premier protocol and executive ushering team. Excellence · Professionalism · Discretion.</p></div>
+    <div><div class="footer__col-title">Services</div><ul class="footer__links"><li><a href="services.html">Executive Ushering</a></li><li><a href="services.html">Protocol Management</a></li><li><a href="services.html">VIP Guest Management</a></li><li><a href="services.html">Gala &amp; State Dinners</a></li></ul></div>
+    <div><div class="footer__col-title">Company</div><ul class="footer__links"><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer__contact"><div class="footer__col-title">Contact</div><div class="fc-item"><span class="fc-label">Team Lead</span><span class="fc-val">Calvin Ahumuza Kavumba</span></div><div class="fc-item"><span class="fc-label">Phone / WhatsApp</span><span class="fc-val">+256 783 054 150<br>+256 704 169 519</span></div><div class="fc-item"><span class="fc-label">Email</span><span class="fc-val">summitprotocolug@gmail.com</span></div></div>
+  </div>
+  <div class="footer__bottom"><span class="footer__copy">© 2025 Summit Protocol Uganda. All rights reserved.</span><div class="footer__socials">
+<a class="footer__soc" href="https://www.instagram.com/summitprotocolug" target="_blank" rel="noopener" aria-label="IG"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+<a class="footer__soc" href="https://www.facebook.com/summitprotocolug" target="_blank" rel="noopener" aria-label="FB"><svg viewBox="0 0 24 24" fill="none"><path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<a class="footer__soc" href="https://www.linkedin.com/company/summit-protocol-uganda" target="_blank" rel="noopener" aria-label="LI"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 11v5M8 8v.5M12 16v-3a2 2 0 0 1 4 0v3M12 11v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+<a class="footer__soc" href="https://wa.me/256783054150" target="_blank" rel="noopener" aria-label="WA"><svg viewBox="0 0 24 24" fill="none"><path d="M20.5 3.5A12 12 0 0 0 3.5 20.5L2 22l1.5-5.5A12 12 0 1 0 20.5 3.5z" stroke="currentColor" stroke-width="1.6"/><path d="M9 9c0 5 6 7 6 7l1-2-2.5-1.5L13 13l-2-2 .5-.5L10 8l-1 1z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></a></div></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
