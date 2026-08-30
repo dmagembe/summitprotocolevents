@@ -1,4 +1,26 @@
 (function(){
+  const autoplayVideos = document.querySelectorAll('.hero__media video[autoplay], .journey-media__frame video[autoplay]');
+  if(!autoplayVideos.length) return;
+
+  function ensurePlaying(video){
+    video.muted = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    const attempt = () => video.play().catch(() => {});
+    if(video.readyState >= 2) attempt();
+    else video.addEventListener('loadeddata', attempt, {once:true});
+  }
+
+  autoplayVideos.forEach(ensurePlaying);
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden) return;
+    autoplayVideos.forEach(video => {
+      if(video.paused) ensurePlaying(video);
+    });
+  });
+})();
+
+(function(){
   const nav = document.getElementById('mainNav');
   const hamburger = document.getElementById('hamburgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -21,17 +43,24 @@
   }
 
   if(hamburger && mobileMenu){
+    const menuClose = document.getElementById('mobileMenuClose');
     function setMenuOpen(open){
       hamburger.classList.toggle('open', open);
       mobileMenu.classList.toggle('open', open);
       document.body.classList.toggle('menu-open', open);
       hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
     }
     hamburger.addEventListener('click', function(){
       setMenuOpen(!mobileMenu.classList.contains('open'));
     });
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    if(menuClose){
+      menuClose.addEventListener('click', function(){
+        setMenuOpen(false);
+      });
+    }
+    mobileMenu.querySelectorAll('.mobile-menu__links a').forEach(link => {
       link.addEventListener('click', function(){
         setMenuOpen(false);
       });

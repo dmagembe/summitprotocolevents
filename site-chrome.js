@@ -29,11 +29,16 @@
       '<ul class="nav__links">' + links.map(l => '<li><a' + (page === l.id ? ' class="active"' : '') + ' href="' + l.href + '">' + l.label + '</a></li>').join('') + '</ul>' +
       '<a class="nav__cta' + (page === 'booking' ? ' active' : '') + '" href="booking.html">Book Now</a>' +
       '<button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
-      '<div class="mobile-menu" id="mobileMenu" aria-hidden="true">' +
+    '</nav>' +
+    '<div class="mobile-menu" id="mobileMenu" aria-hidden="true">' +
+      '<div class="mobile-menu__head">' +
+        '<button class="mobile-menu__close" id="mobileMenuClose" type="button" aria-label="Close menu"><span aria-hidden="true">&times;</span></button>' +
+      '</div>' +
+      '<div class="mobile-menu__links">' +
         links.map(navLink).join('') +
         '<a href="booking.html" class="mobile-menu__cta">Book Now</a>' +
       '</div>' +
-    '</nav>';
+    '</div>';
 
   const socialSVG = {
     instagram:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm10 2H7a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3zm-5 3.5A5.5 5.5 0 1111.5 18 5.5 5.5 0 0112 7.5zm0 2A3.5 3.5 0 1015.5 13 3.5 3.5 0 0012 9.5zM17.8 6.2a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>',
@@ -93,6 +98,11 @@
   inject('chrome-sticky', stickyHTML);
   inject('chrome-toast', toastHTML);
   inject('chrome-lightbox', lightboxHTML);
+
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(mobileMenu && mobileMenu.parentElement !== document.body){
+    document.body.appendChild(mobileMenu);
+  }
 
   window.showToast = function(message){
     const toast = document.getElementById('siteToast');
