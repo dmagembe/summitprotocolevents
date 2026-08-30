@@ -1,0 +1,19 @@
+# --- Do not publish (local / dev only) ---
+node_modules/
+.chrome-profile/
+.playwright/
+test-results/
+playwright-report/
+
+# Original videos before compression (large; keep local only)
+img2/video-originals/
+
+# FFmpeg temp output
+*.compressing.mp4
+
+# --- OS & editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.cursor/

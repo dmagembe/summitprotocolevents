@@ -41,6 +41,8 @@
     });
   }
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   if('IntersectionObserver' in window){
     const obs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -58,10 +60,18 @@
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');
     if(!q) return;
+    q.setAttribute('aria-expanded', 'false');
     q.addEventListener('click', () => {
       const open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if(!open) item.classList.add('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        const btn = i.querySelector('.faq-q');
+        if(btn) btn.setAttribute('aria-expanded', 'false');
+      });
+      if(!open){
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 })();
@@ -69,6 +79,12 @@
 (function(){
   const counters = document.querySelectorAll('[data-count]');
   if(!counters.length || !('IntersectionObserver' in window)) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    counters.forEach(el => {
+      el.textContent = el.dataset.count + (el.dataset.suffix || '');
+    });
+    return;
+  }
 
   function animateCounter(el){
     const target = parseInt(el.dataset.count, 10);
@@ -105,13 +121,94 @@
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = btn.dataset.filter;
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       filterItems.forEach(item => {
         item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
       });
+      if(window.galleryLoadMoreReset) window.galleryLoadMoreReset();
+      if(window.videoLoadMoreReset) window.videoLoadMoreReset();
     });
   });
+  filterBtns.forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false'));
+})();
+
+(function(){
+  const grid = document.querySelector('[data-gallery-grid]');
+  if(!grid) return;
+  const defaultBatch = parseInt(grid.dataset.galleryBatch || '12', 10);
+  const batch = defaultBatch;
+  const btn = document.querySelector('[data-gallery-load-more]');
+  let shown = batch;
+
+  function visibleTiles(){
+    return [...grid.querySelectorAll('[data-category]')].filter(el => !el.classList.contains('hidden'));
+  }
+
+  function apply(){
+    const tiles = visibleTiles();
+    tiles.forEach((tile, i) => tile.classList.toggle('hidden', i >= shown));
+    if(btn){
+      const remaining = tiles.length - shown;
+      btn.style.display = remaining > 0 ? '' : 'none';
+      btn.textContent = remaining > 0 ? 'Load more (' + Math.min(batch, remaining) + ')' : 'All loaded';
+    }
+  }
+
+  window.galleryLoadMoreReset = function(){
+    shown = batch;
+    apply();
+  };
+
+  if(btn){
+    btn.addEventListener('click', () => {
+      shown += batch;
+      apply();
+    });
+  }
+  apply();
+})();
+
+(function(){
+  const reel = document.querySelector('[data-video-reel]');
+  if(!reel) return;
+  const batch = parseInt(reel.dataset.videoBatch || '4', 10);
+  const btn = document.querySelector('[data-video-load-more]');
+  const cards = [...reel.querySelectorAll('.video-card')];
+  let shown = batch;
+
+  function filterVisible(){
+    return cards.filter(card => !card.classList.contains('hidden'));
+  }
+
+  function apply(){
+    const visible = filterVisible();
+    visible.forEach((card, i) => card.classList.toggle('batch-hidden', i >= shown));
+    cards.filter(card => card.classList.contains('hidden')).forEach(card => card.classList.remove('batch-hidden'));
+    if(btn){
+      const remaining = visible.length - shown;
+      btn.style.display = remaining > 0 ? '' : 'none';
+      btn.textContent = remaining > 0 ? 'Load more videos (' + Math.min(batch, remaining) + ')' : 'All videos loaded';
+    }
+  }
+
+  window.videoLoadMoreReset = function(){
+    shown = batch;
+    cards.forEach(card => card.classList.remove('batch-hidden'));
+    apply();
+  };
+
+  if(btn){
+    btn.addEventListener('click', () => {
+      shown += batch;
+      apply();
+    });
+  }
+  apply();
 })();
 
 (function(){
@@ -121,14 +218,20 @@
   const media = document.getElementById('lbMedia');
   const cat = document.getElementById('lbCat');
   const title = document.getElementById('lbTitle');
+  const count = document.getElementById('lbCount');
   const close = document.getElementById('lbClose');
   const prev = document.getElementById('lbPrev');
   const next = document.getElementById('lbNext');
   let items = [];
   let current = 0;
+  let touchStartX = 0;
 
   function visibleItems(){
-    return [...document.querySelectorAll('[data-lightbox]')].filter(item => !item.classList.contains('hidden'));
+    return [...document.querySelectorAll('[data-lightbox]')].filter(item => !item.classList.contains('hidden') && !item.classList.contains('batch-hidden'));
+  }
+
+  function updateCount(){
+    if(count) count.textContent = items.length ? (current + 1) + ' / ' + items.length : '';
   }
 
   function render(index){
@@ -143,10 +246,16 @@
     if(type === 'video'){
       media.innerHTML = '<video controls autoplay playsinline poster="' + poster + '"><source src="' + src + '"></video>';
     }else{
-      media.innerHTML = '<img src="' + src + '" alt="' + alt + '">';
+      media.innerHTML = '<img src="' + src + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+      const img = media.querySelector('img');
+      if(img){
+        img.addEventListener('click', () => img.classList.toggle('lb-zoomed'));
+      }
     }
     if(cat) cat.textContent = item.dataset.categoryLabel || item.dataset.category || '';
     if(title) title.textContent = item.dataset.title || '';
+    updateCount();
+    lightbox.setAttribute('aria-hidden', 'false');
   }
 
   document.querySelectorAll('[data-lightbox]').forEach(item => {
@@ -162,6 +271,7 @@
 
   function closeLb(){
     lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if(media) media.innerHTML = '';
   }
@@ -178,6 +288,17 @@
     if(e.key === 'ArrowLeft') render(current - 1);
     if(e.key === 'ArrowRight') render(current + 1);
   });
+
+  lightbox.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, {passive:true});
+
+  lightbox.addEventListener('touchend', e => {
+    const diff = e.changedTouches[0].screenX - touchStartX;
+    if(Math.abs(diff) < 50) return;
+    if(diff < 0) render(current + 1);
+    else render(current - 1);
+  }, {passive:true});
 })();
 
 (function(){
@@ -185,6 +306,8 @@
   const guestRange = document.getElementById('guestRange');
   const eventType = document.getElementById('eventType');
   const eventDays = document.getElementById('eventDays');
+  const summary = document.getElementById('calcSummary');
+  const priceBox = document.querySelector('.result-box--gold');
   if(!guestInput || !guestRange || !eventType || !eventDays) return;
 
   const packages = [
@@ -195,6 +318,15 @@
     {name:'Executive', min:701, max:1000, ushers:30, base:7500000},
     {name:'Grand', min:1001, max:1500, ushers:40, base:10000000}
   ];
+
+  const eventLabels = {
+    '1':'Corporate Gala / Dinner',
+    '1.2':'State / Government Function',
+    '1.3':'Diplomatic Reception',
+    '1.1':'Award Ceremony',
+    '0.9':'Wedding',
+    '0.85':'AGM / Conference'
+  };
 
   function fmt(n){ return 'UGX ' + n.toLocaleString('en-UG'); }
   function pkgFor(guests){ return packages.find(p => guests >= p.min && guests <= p.max) || packages[packages.length - 1]; }
@@ -215,6 +347,8 @@
     const guests = Math.min(1500, Math.max(10, parseInt(guestInput.value, 10) || 10));
     const pkg = pkgFor(guests);
     const total = price(pkg);
+    const daysLabel = eventDays.options[eventDays.selectedIndex].text;
+    const typeLabel = eventLabels[eventType.value] || 'Other';
 
     guestRange.value = guests;
     setText('rcPackage', pkg.name);
@@ -224,9 +358,19 @@
     setValue('formGuestCount', guests);
     setValue('formPackage', pkg.name + ' Package - ' + pkg.ushers + ' ushers (' + fmt(total) + ' estimate)');
 
+    if(summary){
+      summary.innerHTML = 'Recommended: <strong>' + pkg.ushers + ' ushers</strong> (' + pkg.name + ' package) for <strong>' + guests.toLocaleString() + ' guests</strong> · ' + typeLabel + ' · ' + daysLabel + '.';
+    }
+
     document.querySelectorAll('#pkgTable tbody tr').forEach(row => {
       row.classList.toggle('pkg-active', row.dataset.pkg === pkg.name);
     });
+
+    if(priceBox){
+      priceBox.classList.remove('pulse');
+      void priceBox.offsetWidth;
+      priceBox.classList.add('pulse');
+    }
   }
 
   guestInput.addEventListener('input', update);
@@ -253,20 +397,26 @@
       .map(([key, value]) => key.replaceAll('_',' ') + ': ' + value);
   }
 
+  function toast(msg){
+    if(window.showToast) window.showToast(msg);
+  }
+
   function openMail(subject, fields){
     const body = lines(fields).join('\n');
     window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    toast('Your email app should open with the details filled in.');
   }
 
   function openWhatsApp(prefix, fields){
     const body = prefix + '\n\n' + lines(fields).join('\n');
     window.open('https://wa.me/' + whatsapp + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
+    toast('WhatsApp is opening with your enquiry.');
   }
 
   document.querySelectorAll('[data-email-form]').forEach(form => {
     form.addEventListener('submit', e => {
       e.preventDefault();
-      openMail(form.dataset.subject || 'Summit Protocol Enquiry', values(form));
+      openMail(form.dataset.subject || 'Summit Protocol Events Enquiry', values(form));
     });
   });
 
@@ -275,7 +425,7 @@
       const form = button.closest('form');
       if(!form) return;
       if(!form.reportValidity()) return;
-      openWhatsApp(button.dataset.message || 'Hello Summit Protocol, I would like to make an enquiry.', values(form));
+      openWhatsApp(button.dataset.message || 'Hello Summit Protocol Events, I would like to make an enquiry.', values(form));
     });
   });
 })();
