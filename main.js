@@ -21,15 +21,23 @@
   }
 
   if(hamburger && mobileMenu){
+    function setMenuOpen(open){
+      hamburger.classList.toggle('open', open);
+      mobileMenu.classList.toggle('open', open);
+      document.body.classList.toggle('menu-open', open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
     hamburger.addEventListener('click', function(){
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+      setMenuOpen(!mobileMenu.classList.contains('open'));
     });
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function(){
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
+        setMenuOpen(false);
       });
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && mobileMenu.classList.contains('open')) setMenuOpen(false);
     });
   }
 
@@ -56,6 +64,37 @@
       if(!open) item.classList.add('open');
     });
   });
+})();
+
+(function(){
+  const counters = document.querySelectorAll('[data-count]');
+  if(!counters.length || !('IntersectionObserver' in window)) return;
+
+  function animateCounter(el){
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const start = performance.now();
+
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if(progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        animateCounter(entry.target);
+        counterObs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.5});
+
+  counters.forEach(el => counterObs.observe(el));
 })();
 
 (function(){

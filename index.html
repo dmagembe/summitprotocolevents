@@ -42,9 +42,9 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a class="nav__cta" href="booking.html">Book Now</a>
-  <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
+  <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a class="active" href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
@@ -63,7 +63,7 @@
     <div class="hero__content">
       <div class="hero__copy fade">
         <div class="eyebrow">Executive ushering in Uganda</div>
-        <h1 class="h1 hero__title">Protocol that makes every guest feel expected.</h1>
+        <h1 class="h1 hero__title">Protocol that makes <em>every guest</em> feel expected.</h1>
         <p class="lead hero__text">Summit Protocol provides trained event ushers, VIP guest management and formal protocol support for weddings, corporate functions, diplomatic receptions and high-level events across East Africa.</p>
         <div class="btn-row">
           <a class="btn btn--gold" href="https://wa.me/256780793279?text=Hello%20Summit%20Protocol%2C%20I%20would%20like%20to%20book%20ushers%20for%20my%20event." target="_blank" rel="noopener">Book on WhatsApp</a>
@@ -75,6 +75,28 @@
         <div class="proof-card"><div class="proof-card__num">UG</div><div class="proof-card__label">Based in Kampala</div></div>
         <div class="proof-card"><div class="proof-card__num">VIP</div><div class="proof-card__label">Guest handling</div></div>
         <div class="proof-card"><div class="proof-card__num">EA</div><div class="proof-card__label">East Africa service</div></div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">Scroll</div>
+  </section>
+
+  <section class="stats-bar" aria-label="Summit Protocol highlights">
+    <div class="stats-bar__grid">
+      <div class="stat-item fade">
+        <span class="stat-item__num" data-count="100" data-suffix="+">0</span>
+        <span class="stat-item__label">Events Served</span>
+      </div>
+      <div class="stat-item fade">
+        <span class="stat-item__num" data-count="50" data-suffix="">0</span>
+        <span class="stat-item__label">Trained Officers</span>
+      </div>
+      <div class="stat-item fade">
+        <span class="stat-item__num" data-count="100" data-suffix="%">0</span>
+        <span class="stat-item__label">Client Satisfaction</span>
+      </div>
+      <div class="stat-item fade">
+        <span class="stat-item__num" data-text="EA">EA</span>
+        <span class="stat-item__label">East Africa Coverage</span>
       </div>
     </div>
   </section>
@@ -112,6 +134,25 @@
     </article>
   </section>
 
+  <section class="story-block">
+    <div class="wrap">
+      <div class="fade">
+        <div class="eyebrow" style="color:var(--gold-2)">Our story</div>
+        <h2 class="h2">Crafting presence <em>with purpose.</em></h2>
+        <blockquote class="story-quote">"Protocol is not procedure. It is the visible form of invisible values."</blockquote>
+        <p class="body-copy">Summit Protocol is not just a name — it symbolizes what we have overcome to get here. From volunteering at national and international events, to training in anticipation, to bringing together teams of like-minded people, and now executing events with precision, quality and love.</p>
+        <p class="body-copy" style="margin-top:16px">We keep waiting for the opportunity to serve another gathering because we are called to put a smile through service — a smile to be remembered, and an event to stay at the heart of guests.</p>
+        <div class="btn-row" style="margin-top:32px">
+          <a class="btn btn--gold" href="about.html">Our Story</a>
+          <a class="btn btn--outline-light" href="services.html">What We Offer</a>
+        </div>
+      </div>
+      <div class="media-frame media-frame--tall fade">
+        <img src="img2/DSC_9819.JPG.jpeg" alt="Summit Protocol leadership at a formal event">
+      </div>
+    </div>
+  </section>
+
   <section class="section section--soft">
     <div class="wrap split">
       <div class="media-frame media-frame--tall fade">
@@ -133,6 +174,50 @@
 
   <section class="section">
     <div class="wrap">
+      <div class="intro-grid" style="margin-bottom:40px">
+        <div class="fade">
+          <div class="eyebrow">Client testimonials</div>
+          <h2 class="h2">What our clients say.</h2>
+        </div>
+        <p class="lead fade">Events across churches, conferences, universities and corporate gatherings — trusted by organisers who need grace and precision on the day.</p>
+      </div>
+      <div class="testimonials">
+        <article class="testimonial fade">
+          <p class="testimonial__text">Summit Protocol brought extraordinary grace and precision to our Partners' Dinner. Every guest felt genuinely cared for from arrival to departure.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">C</div>
+            <div>
+              <div class="testimonial__name">Covenant Nations Church</div>
+              <div class="testimonial__event">Partners' Dinner, Kampala</div>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial fade">
+          <p class="testimonial__text">We have never seen a protocol team of this calibre in Uganda. Impeccable presentation, seamless coordination, and absolute professionalism throughout.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">M</div>
+            <div>
+              <div class="testimonial__name">Mantle of Deborah Uganda</div>
+              <div class="testimonial__event">Annual Conference</div>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial fade">
+          <p class="testimonial__text">Summit Protocol handled the guild women dialogue with excellence. Every detail of precedence and etiquette was observed with absolute precision.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">G</div>
+            <div>
+              <div class="testimonial__name">The Guild Women Dialogue</div>
+              <div class="testimonial__event">Makerere University, Uganda</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
       <div class="intro-grid" style="margin-bottom:34px">
         <div class="fade">
           <div class="eyebrow">Recent media</div>
@@ -142,11 +227,11 @@
       </div>
       <div class="media-grid">
         <button class="media-tile media-tile--wide fade" data-lightbox data-src="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.2.jpeg" data-title="Summit Protocol event team" data-category-label="Team">
-          <img src="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.2.jpeg" alt="Summit Protocol event team in formal waistcoats">
+          <img src="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.2.jpeg" alt="Summit Protocol event team in formal waistcoats" loading="lazy">
           <span class="media-tile__meta"><span class="media-tile__cat">Team</span><span class="media-tile__title">Formal event team</span></span>
         </button>
         <button class="media-tile fade" data-lightbox data-src="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.20%20PM.jpeg" data-title="Protocol officers in formation" data-category-label="Protocol">
-          <img src="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.20%20PM.jpeg" alt="Protocol officers in formal black and white uniforms">
+          <img src="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.20%20PM.jpeg" alt="Protocol officers in formal black and white uniforms" loading="lazy">
           <span class="media-tile__meta"><span class="media-tile__cat">Protocol</span><span class="media-tile__title">Officers in formation</span></span>
         </button>
         <button class="media-tile fade" data-lightbox data-type="video" data-src="img2/n8.mp4" data-poster="img2/WhatsApp%20Image%202026-08-28%20at%2011.41.21.jpeg" data-title="Event ushering video" data-category-label="Video">
@@ -154,10 +239,13 @@
           <span class="media-tile__meta"><span class="media-tile__cat">Video</span><span class="media-tile__title">Event movement</span></span>
         </button>
       </div>
+      <div class="btn-row" style="margin-top:28px;justify-content:center">
+        <a class="btn btn--outline" href="gallery.html">View Full Gallery</a>
+      </div>
     </div>
   </section>
 
-  <section class="section section--soft">
+  <section class="section">
     <div class="wrap">
       <div class="intro-grid" style="margin-bottom:34px">
         <div class="fade">
@@ -168,27 +256,41 @@
       </div>
       <div class="media-grid media-grid--compact">
         <button class="media-tile fade" data-lightbox data-src="img/SM3.webp" data-title="Formal black-uniform team" data-category-label="Archive">
-          <img src="img/SM3.webp" alt="Summit Protocol team in formal black uniforms">
+          <img src="img/SM3.webp" alt="Summit Protocol team in formal black uniforms" loading="lazy">
           <span class="media-tile__meta"><span class="media-tile__cat">Archive</span><span class="media-tile__title">Formal black-uniform team</span></span>
         </button>
         <button class="media-tile fade" data-lightbox data-src="img/SM5.webp" data-title="Outdoor event team" data-category-label="Archive">
-          <img src="img/SM5.webp" alt="Summit Protocol team outdoors at an event">
+          <img src="img/SM5.webp" alt="Summit Protocol team outdoors at an event" loading="lazy">
           <span class="media-tile__meta"><span class="media-tile__cat">Archive</span><span class="media-tile__title">Outdoor event team</span></span>
         </button>
         <button class="media-tile fade" data-lightbox data-src="img/SM8.webp" data-title="White-shirt event team" data-category-label="Archive">
-          <img src="img/SM8.webp" alt="Summit Protocol ushers in white shirts">
+          <img src="img/SM8.webp" alt="Summit Protocol ushers in white shirts" loading="lazy">
           <span class="media-tile__meta"><span class="media-tile__cat">Archive</span><span class="media-tile__title">White-shirt event team</span></span>
         </button>
         <button class="media-tile fade" data-lightbox data-src="img/sm38.webp" data-title="Indoor protocol team" data-category-label="Archive">
-          <img src="img/sm38.webp" alt="Summit Protocol team indoors">
+          <img src="img/sm38.webp" alt="Summit Protocol team indoors" loading="lazy">
           <span class="media-tile__meta"><span class="media-tile__cat">Archive</span><span class="media-tile__title">Indoor protocol team</span></span>
         </button>
       </div>
     </div>
   </section>
 
+  <section class="booking-teaser">
+    <div class="wrap">
+      <div>
+        <div class="booking-teaser__badge">Instant estimate</div>
+        <h2 class="h2">Get a price estimate in seconds.</h2>
+        <p class="lead">Enter your guest count and event type on our booking page — we'll recommend the right package and team size for your occasion.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--gold" href="booking.html">Calculate &amp; Book</a>
+        <a class="btn btn--outline-light" href="https://wa.me/256780793279?text=Hello%20Summit%20Protocol%2C%20I%20would%20like%20to%20get%20a%20price%20estimate." target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
   <section class="quote-band">
-    <img src="img2/WhatsApp%20Image%202026-08-28.jpeg" alt="Summit Protocol team standing at an event venue">
+    <img src="img2/WhatsApp%20Image%202026-08-28.jpeg" alt="Summit Protocol team standing at an event venue" loading="lazy">
     <div class="quote-band__inner">
       <h2 class="h2">Planning an event in Uganda or East Africa?</h2>
       <div class="btn-row">
@@ -224,6 +326,10 @@
     <div class="socials"><a href="https://www.instagram.com/summit_protocal_services?igsh=Z3E3bzYwYW9nenll" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/summitprotocolug" target="_blank" rel="noopener">Facebook</a><a href="https://www.linkedin.com/company/summit-protocol-uganda" target="_blank" rel="noopener">LinkedIn</a></div>
   </div>
 </footer>
+
+<a class="fab-wa" href="https://wa.me/256780793279?text=Hello%20Summit%20Protocol%2C%20I%20would%20like%20to%20book%20ushers%20for%20my%20event." target="_blank" rel="noopener" aria-label="Book on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
   <div class="lb-inner">
