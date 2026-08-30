@@ -3,11 +3,11 @@
   const navSolid = document.body.dataset.navSolid === 'true';
 
   const links = [
-    {href:'index.html', label:'Home', id:'home'},
-    {href:'about.html', label:'About', id:'about'},
-    {href:'services.html', label:'Services', id:'services'},
-    {href:'gallery.html', label:'Gallery', id:'gallery'},
-    {href:'contact.html', label:'Contact', id:'contact'}
+    {href:'/', label:'Home', id:'home'},
+    {href:'/about', label:'About', id:'about'},
+    {href:'/services', label:'Services', id:'services'},
+    {href:'/gallery', label:'Gallery', id:'gallery'},
+    {href:'/contact', label:'Contact', id:'contact'}
   ];
 
   function navLink(item){
@@ -22,12 +22,12 @@
 
   const navHTML =
     '<nav class="nav ' + (navSolid ? 'nav--scrolled' : 'nav--transparent') + '" id="mainNav"' + (navSolid ? ' data-solid="true"' : '') + '>' +
-      '<a href="index.html" class="nav__brand">' +
+      '<a href="/" class="nav__brand">' +
         '<span class="nav__logo-wrap"><img class="nav__logo nav__logo--brand" src="' + logoSrc + '" width="44" height="44" alt=""></span>' +
         '<span class="nav__brand-text"><span class="nav__name">' + brandName + '</span><span class="nav__tag">' + brandTag + '</span></span>' +
       '</a>' +
       '<ul class="nav__links">' + links.map(l => '<li><a' + (page === l.id ? ' class="active"' : '') + ' href="' + l.href + '">' + l.label + '</a></li>').join('') + '</ul>' +
-      '<a class="nav__cta' + (page === 'booking' ? ' active' : '') + '" href="booking.html">Book Now</a>' +
+      '<a class="nav__cta' + (page === 'booking' ? ' active' : '') + '" href="/booking">Book Now</a>' +
       '<button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
     '</nav>' +
     '<div class="mobile-menu" id="mobileMenu" aria-hidden="true">' +
@@ -36,7 +36,7 @@
       '</div>' +
       '<div class="mobile-menu__links">' +
         links.map(navLink).join('') +
-        '<a href="booking.html" class="mobile-menu__cta">Book Now</a>' +
+        '<a href="/booking" class="mobile-menu__cta">Book Now</a>' +
       '</div>' +
     '</div>';
 
@@ -50,8 +50,8 @@
     '<footer class="footer">' +
       '<div class="footer__grid">' +
         '<div><div class="footer__brand-row"><img class="footer__logo footer__logo--brand" src="' + logoSrc + '" width="160" height="64" alt="' + brandName + '"><div><div class="footer__name">' + brandName + '</div><div class="footer__tag">' + brandTag + '</div></div></div><p>Executive ushering, protocol management, VIP guest handling and wedding support for events in Kampala, Uganda and East Africa.</p></div>' +
-        '<div><h3>Services</h3><ul><li><a href="services.html">Executive Ushering</a></li><li><a href="services.html">Protocol Management</a></li><li><a href="services.html">VIP Guest Handling</a></li><li><a href="services.html">Wedding Ushers</a></li></ul></div>' +
-        '<div><h3>Company</h3><ul><li><a href="about.html">About</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="booking.html">Booking</a></li><li><a href="contact.html">Contact</a></li></ul></div>' +
+        '<div><h3>Services</h3><ul><li><a href="/services">Executive Ushering</a></li><li><a href="/services">Protocol Management</a></li><li><a href="/services">VIP Guest Handling</a></li><li><a href="/services">Wedding Ushers</a></li></ul></div>' +
+        '<div><h3>Company</h3><ul><li><a href="/about">About</a></li><li><a href="/gallery">Gallery</a></li><li><a href="/booking">Booking</a></li><li><a href="/contact">Contact</a></li></ul></div>' +
         '<div><h3>Contact</h3><p>Email: <a href="mailto:summitprotocolinfo@gmail.com">summitprotocolinfo@gmail.com</a><br>WhatsApp: <a href="https://wa.me/256780793279" target="_blank" rel="noopener">+256 780 793 279</a><br>Phone: +256 704 169 519<br>Kampala, Uganda</p></div>' +
       '</div>' +
       '<div class="footer__bottom"><span>&copy; 2026 ' + brandName + '. All rights reserved.</span>' +
@@ -70,7 +70,7 @@
 
   const stickyHTML =
     '<div class="mobile-bar" id="mobileBar" aria-label="Quick actions">' +
-      '<a class="mobile-bar__btn mobile-bar__btn--gold" href="booking.html">Get Estimate</a>' +
+      '<a class="mobile-bar__btn mobile-bar__btn--gold" href="/booking">Get Estimate</a>' +
       '<a class="mobile-bar__btn" href="https://wa.me/256780793279?text=' + waMessage + '" target="_blank" rel="noopener">WhatsApp</a>' +
     '</div>';
 
